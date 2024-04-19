@@ -3,6 +3,8 @@ const confucio = new BookConstructor("Los cuatro libros clásicos", "Confucio y 
 
 console.log(harryPotter.info());
 console.log(confucio.info());
+console.log(Object.getPrototypeOf(confucio) === BookConstructor.prototype);
+console.log(Object.prototype.hasOwnProperty("hasOwnProperty"));
 
 function BookConstructor(title, author, pages, read)
 {
