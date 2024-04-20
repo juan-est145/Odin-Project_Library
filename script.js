@@ -67,6 +67,7 @@ function CardElementConstructor(bookObject)
 	
 	card.appendChild(title);
 	card.appendChild(author);
+	card.appendChild(pages);
 	card.appendChild(read);
 	card.appendChild(remove);
 	return (card);
