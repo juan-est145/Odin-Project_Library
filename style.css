@@ -38,6 +38,27 @@ header button:active
 	background-color: hsla(71, 69%, 20%, 1);
 }
 
+main
+{
+	flex-grow: 1;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 20px;
+	padding: 1em;
+	justify-content: center;
+}
+
+.card_container
+{
+	display: flex;
+	min-width: 200px;
+	flex-direction: column;
+	background-color: pink;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
 footer
 {
 	background-color: var(--footer_color);
