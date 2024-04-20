@@ -50,25 +50,24 @@ function BookConstructor(title, author, pages, read)
 
 function CardElementConstructor(bookObject)
 {
-	const title = document.createElement("p");
-	const author = document.createElement("p");
-	const pages = document.createElement("p");
-	const read = document.createElement("button");
-	const remove = document.createElement("button");
+	const card_properties = 
+	{
+		title : document.createElement("p"),
+		author :  document.createElement("p"),
+		pages : document.createElement("p"),
+		read : document.createElement("button"),
+		remove : document.createElement("button")
+	};
 
-	title.textContent = bookObject.title;
-	author.textContent = bookObject.author;
-	pages.textContent = `${bookObject.pages} pages`;
-	read.textContent = bookObject.read === true ? "Read" : "Not read";
-	remove.textContent = "Remove";
-
+	card_properties.title.textContent = bookObject.title;
+	card_properties.author.textContent = bookObject.author;
+	card_properties.pages.textContent = `${bookObject.pages} pages`;
+	card_properties.read.textContent = bookObject.read === true ? "Read" : "Not read";
+	card_properties.remove.textContent = "Remove";
+	
 	const card = document.createElement("div");
 	card.className = "card_container";
-	
-	card.appendChild(title);
-	card.appendChild(author);
-	card.appendChild(pages);
-	card.appendChild(read);
-	card.appendChild(remove);
+	for (const key in card_properties)
+		card.appendChild(card_properties[key]);
 	return (card);
 }
