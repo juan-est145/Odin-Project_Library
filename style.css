@@ -67,6 +67,25 @@ main
 	background-color: var(--card_container_color);
 }
 
+form
+{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+form > div
+{
+	display: flex;
+	justify-content: space-around;
+}
+
+form div:first-of-type
+{
+	justify-content: flex-start;
+	gap: 10px;
+}
+
 footer
 {
 	background-color: var(--footer_color);

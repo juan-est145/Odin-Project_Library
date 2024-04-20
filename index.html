@@ -13,6 +13,21 @@
 		<button>Add book</button>
 	</header>
 	<main>
+		<dialog>
+			<form action="post">
+				<input type="text" required placeholder="Title">
+				<input type="text" required placeholder="Author">
+				<input type="number" required placeholder="Nº of pages">
+				<div>
+					<label for="checkbox">Have you read it?</label>
+					<input type="checkbox" id="checkbox">
+				</div>
+				<div>
+					<button type="submit" formmethod="dialog">Cancel</button>
+					<button type="submit">Submit</button>
+				</div>
+			</form>
+		</dialog>
 		<div class="card_container">
 			<p>Title</p>
 			<p>Author</p>
