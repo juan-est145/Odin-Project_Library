@@ -67,6 +67,16 @@ main
 	background-color: var(--card_container_color);
 }
 
+.card_container .read_book
+{
+	background-color: green;
+}
+
+.card_container .not_read_book
+{
+	background-color: red;
+}
+
 form
 {
 	display: flex;

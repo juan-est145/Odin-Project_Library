@@ -3,6 +3,20 @@ const modal = document.querySelector("dialog");
 const closeForm = document.querySelector("#cancel_form");
 const form = document.querySelector("#book_form");
 
+document.querySelector("main").addEventListener("click", (e) =>
+{
+	if (e.target.className === "read_book")
+	{
+		e.target.className = "not_read_book";
+		e.target.textContent = "Not read";
+	}
+	else if (e.target.className === "not_read_book")
+	{
+		e.target.className = "read_book";
+		e.target.textContent = "Read";
+	}
+});
+
 modal.addEventListener("click", (e) =>
 {
 	const dialogDimensions = modal.getBoundingClientRect();
@@ -62,9 +76,18 @@ function CardElementConstructor(bookObject)
 	card_properties.title.textContent = bookObject.title;
 	card_properties.author.textContent = bookObject.author;
 	card_properties.pages.textContent = `${bookObject.pages} pages`;
-	card_properties.read.textContent = bookObject.read === true ? "Read" : "Not read";
+	if (bookObject.read === true)
+	{
+		card_properties.read.textContent = "Read";
+		card_properties.read.className = "read_book";
+	}
+	else
+	{
+		card_properties.read.textContent = "Not read";
+		card_properties.read.className = "not_read_book";
+	}
 	card_properties.remove.textContent = "Remove";
-	
+
 	const card = document.createElement("div");
 	card.className = "card_container";
 	for (const key in card_properties)
