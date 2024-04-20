@@ -1,10 +1,16 @@
-const harryPotter = new BookConstructor("El caliz de fuego", "J.K Rowling", 500, true);
-const confucio = new BookConstructor("Los cuatro libros clásicos", "Confucio y cía", 325, false);
+const addBookButton = document.querySelector("#add_book_btn");
+const modal = document.querySelector("dialog");
+const closeForm = document.querySelector("#cancel_form");
 
-console.log(harryPotter.info());
-console.log(confucio.info());
-console.log(Object.getPrototypeOf(confucio) === BookConstructor.prototype);
-console.log(Object.prototype.hasOwnProperty("hasOwnProperty"));
+addBookButton.addEventListener("click", () =>
+{
+	modal.showModal();
+});
+
+closeForm.addEventListener("click", () =>
+{
+	modal.close();
+});
 
 function BookConstructor(title, author, pages, read)
 {
