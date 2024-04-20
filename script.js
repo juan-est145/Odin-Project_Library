@@ -1,6 +1,7 @@
 const addBookButton = document.querySelector("#add_book_btn");
 const modal = document.querySelector("dialog");
 const closeForm = document.querySelector("#cancel_form");
+const form = document.querySelector("#book_form");
 
 modal.addEventListener("click", (e) =>
 {
@@ -24,14 +25,23 @@ closeForm.addEventListener("click", () =>
 	modal.close();
 });
 
+form.addEventListener("submit", (e) =>
+{
+	e.preventDefault();
+	const newBook = new BookConstructor
+	(
+		e.target.querySelector("#title").value,
+		e.target.querySelector("#author").value,
+		parseInt(e.target.querySelector("#pages").value),
+		e.target.querySelector("#read_status").checked ? true : false,
+	);
+	modal.close();
+});
+
 function BookConstructor(title, author, pages, read)
 {
 	this.title = title;
 	this.author = author;
 	this.pages = pages;
 	this.read = read;
-	this.info = () =>
-	{
-		return `${this.title} by ${this.author}, ${this.pages} pages, read ${this.read}`;
-	};
 }

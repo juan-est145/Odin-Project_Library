@@ -14,17 +14,17 @@
 	</header>
 	<main>
 		<dialog>
-			<form action="post">
-				<input type="text" required placeholder="Title">
-				<input type="text" required placeholder="Author">
-				<input type="number" required placeholder="Nº of pages">
+			<form action="post" id="book_form">
+				<input type="text" required placeholder="Title" id="title">
+				<input type="text" required placeholder="Author" id="author">
+				<input type="number" required placeholder="Nº of pages" id="pages">
 				<div>
-					<label for="checkbox">Have you read it?</label>
-					<input type="checkbox" id="checkbox">
+					<label for="read_status">Have you read it?</label>
+					<input type="checkbox" id="read_status">
 				</div>
 				<div>
 					<button type="button" id="cancel_form">Cancel</button>
-					<button type="submit" id="submit_form">Submit</button>
+					<button type="submit">Submit</button>
 				</div>
 			</form>
 		</dialog>
