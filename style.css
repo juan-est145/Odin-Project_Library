@@ -60,20 +60,36 @@ main
 {
 	display: flex;
 	min-width: 200px;
+	outline: solid 2px;
+	font-size: 1.3rem;
+	gap: 10px;
 	flex-direction: column;
-	background-color: pink;
 	justify-content: space-evenly;
 	align-items: center;
 	background-color: var(--card_container_color);
+	padding: 1em;
 }
 
-.card_container .read_book
+.card_container button
+{
+	border: none;
+	font-size: 1.3rem;
+	width: 100%;
+	border-radius: 0.5em;
+}
+
+.remove_button:active
+{
+	background-color: darkgrey;
+}
+
+.read_book
 {
 	background-color: green;
-
+	
 }
 
-.card_container .not_read_book
+.not_read_book
 {
 	background-color: red;
 }
@@ -83,21 +99,45 @@ form
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+	padding: 1em;
 	gap: 20px;
-	width: 50vw;
-	height: 50vh;
+	min-width: 50vw;
+	min-height: 50vh;
+}
+
+form input
+{
+	min-height: 3em;
+	border-radius: 0.5em;
+	border: solid grey;
+	font-size: 1.2rem;
 }
 
 legend
 {
 	align-self: center;
+	font-size: 2rem;
 }
 
 form > div
 {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	gap: 10px;
+	font-size: 1.2rem;
+}
+
+form > div:nth-of-type(2)
+{
+	justify-content: space-evenly;
+}
+
+form button
+{
+	font-size: 1.2rem;
+	padding: 0.5em;
+	border-radius: 0.5em;
 }
 
 footer

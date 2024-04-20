@@ -87,6 +87,7 @@ function CreateCardElement(bookObject)
 		card_properties.read.className = "not_read_book";
 	}
 	card_properties.remove.textContent = "Remove";
+	card_properties.remove.className = "remove_button";
 
 	const card = document.createElement("div");
 	card.className = "card_container";
