@@ -12,9 +12,15 @@ body
 	background-color: var(--body_color);
 }
 
+p
+{
+	margin: 0px;
+}
+
 header
 {
 	--button_color: hsla(71, 100%, 50%, 1);
+	--button_color_active: hsla(71, 69%, 20%, 1);
 	display: flex;
 	justify-content: space-between;
 	padding: 1em 3em;
@@ -35,11 +41,12 @@ header button
 
 header button:active
 {
-	background-color: hsla(71, 69%, 20%, 1);
+	background-color: var(--button_color_active);
 }
 
 main
 {
+	--card_container_color: hsla(113, 15%, 50%, 1);
 	flex-grow: 1;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -57,6 +64,7 @@ main
 	background-color: pink;
 	justify-content: space-evenly;
 	align-items: center;
+	background-color: var(--card_container_color);
 }
 
 footer
