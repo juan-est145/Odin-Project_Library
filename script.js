@@ -49,7 +49,7 @@ form.addEventListener("submit", (e) =>
 		e.target.querySelector("#pages").value,
 		e.target.querySelector("#read_status").checked ? true : false,
 	);
-	const bookCard = CardElementConstructor(newBook);
+	const bookCard = CreateCardElement(newBook);
 	document.querySelector("main").appendChild(bookCard);
 	modal.close();
 });
@@ -62,7 +62,7 @@ function BookConstructor(title, author, pages, read)
 	this.read = read;
 }
 
-function CardElementConstructor(bookObject)
+function CreateCardElement(bookObject)
 {
 	const card_properties = 
 	{

@@ -70,6 +70,7 @@ main
 .card_container .read_book
 {
 	background-color: green;
+
 }
 
 .card_container .not_read_book
@@ -81,18 +82,21 @@ form
 {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-evenly;
 	gap: 20px;
+	width: 50vw;
+	height: 50vh;
+}
+
+legend
+{
+	align-self: center;
 }
 
 form > div
 {
 	display: flex;
-	justify-content: space-around;
-}
-
-form div:first-of-type
-{
-	justify-content: flex-start;
+	justify-content: center;
 	gap: 10px;
 }
 
