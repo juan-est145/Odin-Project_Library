@@ -32,9 +32,11 @@ form.addEventListener("submit", (e) =>
 	(
 		e.target.querySelector("#title").value,
 		e.target.querySelector("#author").value,
-		parseInt(e.target.querySelector("#pages").value),
+		e.target.querySelector("#pages").value,
 		e.target.querySelector("#read_status").checked ? true : false,
 	);
+	const bookCard = CardElementConstructor(newBook);
+	document.querySelector("main").appendChild(bookCard);
 	modal.close();
 });
 
@@ -44,4 +46,28 @@ function BookConstructor(title, author, pages, read)
 	this.author = author;
 	this.pages = pages;
 	this.read = read;
+}
+
+function CardElementConstructor(bookObject)
+{
+	const title = document.createElement("p");
+	const author = document.createElement("p");
+	const pages = document.createElement("p");
+	const read = document.createElement("button");
+	const remove = document.createElement("button");
+
+	title.textContent = bookObject.title;
+	author.textContent = bookObject.author;
+	pages.textContent = `${bookObject.pages} pages`;
+	read.textContent = bookObject.read === true ? "Read" : "Not read";
+	remove.textContent = "Remove";
+
+	const card = document.createElement("div");
+	card.className = "card_container";
+	
+	card.appendChild(title);
+	card.appendChild(author);
+	card.appendChild(read);
+	card.appendChild(remove);
+	return (card);
 }
