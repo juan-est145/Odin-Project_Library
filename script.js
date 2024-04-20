@@ -2,8 +2,9 @@ const addBookButton = document.querySelector("#add_book_btn");
 const modal = document.querySelector("dialog");
 const closeForm = document.querySelector("#cancel_form");
 const form = document.querySelector("#book_form");
+const main = document.querySelector("main");
 
-document.querySelector("main").addEventListener("click", (e) =>
+main.addEventListener("click", (e) =>
 {
 	if (e.target.className === "read_book")
 	{
@@ -15,6 +16,8 @@ document.querySelector("main").addEventListener("click", (e) =>
 		e.target.className = "read_book";
 		e.target.textContent = "Read";
 	}
+	else if (e.target.className === "remove_button")
+		main.removeChild(e.target.closest(".card_container"));
 });
 
 modal.addEventListener("click", (e) =>
